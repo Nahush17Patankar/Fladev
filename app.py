@@ -1,7 +1,9 @@
 
-
+from flask import Flask
 import time
 import mysql.connector
+
+app = Flask(__name__)
 
 for i in range(10):
     try:
@@ -19,7 +21,7 @@ for i in range(10):
 
 @app.route('/')
 def home():
-    return "Falsk is running with mysql"
+    return "Falsk is running with mysql!"
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5000)
