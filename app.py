@@ -16,5 +16,10 @@ for i in range(10):
     except:
         print("Retrying DB connection...")
         time.sleep(5)
-print("App finished successfully")
-exit(0)
+
+@app.route('/')
+def home():
+    return "Falsk is running with mysql"
+
+if __name__ == '__main__':
+    app.run(host="0.0.0.0", port=5000)
